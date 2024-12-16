@@ -8,13 +8,13 @@
     "build": "npm run build:backend && npm run build:frontend",
     "start:backend": "npm run --prefix backend start",
     "start:frontend": "npm run --prefix frontend dev",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+    "start": "pm2 start ecosystem.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "pm2": "^5.4.3"
   }
 }
