@@ -1,9 +1,14 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { SnsService } from './sns.service';
 
 @Controller('orders')
 export class OrdersController {
   constructor(private readonly snsService: SnsService) {}
+
+  @Get('/')
+  getOrder(): string {
+    return 'Order getted';
+  }
 
   @Post('create')
   async createOrder(@Body() body: { userId: string }) {
